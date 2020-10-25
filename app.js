@@ -1,6 +1,7 @@
+import { api1, api2 } from '/storage.js';
 const request = require('request');
 
-apiKey = 'fc5410395c895574743b5b309ea45e67'
+apiKey = api1
 city = 'Bucharest'
 url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
 
@@ -14,7 +15,7 @@ request({ url: url, json: true }, (error, response) => {
     }
 })
 
-apiKey2 = 'pk.eyJ1IjoiY3J5c3lzcSIsImEiOiJja2doazlrdWYwNGpiMnRxa3EydTI0ejJlIn0.ZGuOsgRXxhOyWSiNxzEvFQ'
+apiKey2 = api2
 urlGeo = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + city + '.json?access_token=' + apiKey2
 request({ url: urlGeo, json: true }, (error, response) => {
     if (error) {
